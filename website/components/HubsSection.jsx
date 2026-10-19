@@ -8,7 +8,7 @@ export default function HubsSection() {
   const hub = active === null ? null : hubs[active];
 
   return <section className="hubs-section section-wrap" aria-labelledby="hubs-title">
-    <div className="hubs-heading"><span className="eyebrow">EXPLORE THE NETWORK</span><h2 id="hubs-title">Our hubs</h2><p>Explore a preview of twelve locations across Pakistan.</p></div>
+    <div className="hubs-heading"><span className="eyebrow">EXPLORE THE NETWORK</span><h2 id="hubs-title">Our hubs</h2><p>12 sample locations across Pakistan.</p></div>
     <div className="hubs-map">
       <div className="hubs-map-canvas" role="group" aria-label="Sample hub locations across Pakistan" onPointerLeave={(event) => { if (event.pointerType === "mouse") setActive(null); }} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setActive(null); }}>
         <svg className="hubs-map-svg" viewBox="0 0 600 500" role="img" aria-label="Outline map of Pakistan"><defs><pattern id="pakistan-dots" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.7" fill="#796d60"/></pattern></defs><path d={pakistanPath} fill="url(#pakistan-dots)" stroke="#7a6a59" strokeWidth=".8" strokeOpacity=".35"/></svg>

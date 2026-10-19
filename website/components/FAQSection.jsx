@@ -6,29 +6,29 @@ const groups = [
   {
     name: "General",
     questions: [
-      { question: "What can I find at New Welcome Plywood?", answer: "Explore the catalogue for plywood, panels, hardware and kitchen items. Each product page shows the information currently available for that item." },
-      { question: "How can I ask about a product?", answer: "Open a product page or add items to your order list, then send your enquiry to our team on WhatsApp." },
+      { question: "What can I find at New Welcome Plywood?", answer: "Plywood, panels, hardware and kitchen items. Open a product for available details." },
+      { question: "How can I ask about a product?", answer: "Add it to your order list and enquire on WhatsApp." },
     ],
   },
   {
     name: "Products",
     questions: [
-      { question: "Where can I see product details?", answer: "Select any product in the catalogue to view its page. If a detail you need is missing, include the product in your WhatsApp enquiry and ask our team." },
-      { question: "Can I enquire about more than one product?", answer: "Yes. Add products to your order list, adjust their quantities, and send the full selection together on WhatsApp." },
+      { question: "Where can I see product details?", answer: "Open a product page. Ask us on WhatsApp if a detail is missing." },
+      { question: "Can I enquire about more than one product?", answer: "Yes. Add items, set quantities, and send one WhatsApp enquiry." },
     ],
   },
   {
     name: "Pricing",
     questions: [
-      { question: "Why do some products show ‘Price on enquiry’?", answer: "A price has not been provided for those catalogue items. Our team can confirm current pricing when you send your enquiry." },
-      { question: "How do I confirm availability?", answer: "Send the product names and quantities through the order list. Our team will confirm availability with you directly." },
+      { question: "Why do some products show ‘Price on enquiry’?", answer: "A price is not listed. Ask us for current pricing." },
+      { question: "How do I confirm availability?", answer: "Send your list. Our team will confirm availability." },
     ],
   },
   {
     name: "Ordering",
     questions: [
-      { question: "How does the WhatsApp order list work?", answer: "Add the products you want, set a quantity for each, then choose Continue on WhatsApp. Your message will include your selected items and product links." },
-      { question: "Can I change quantities before sending?", answer: "Yes. Open your order list and use the quantity controls before continuing to WhatsApp." },
+      { question: "How does the WhatsApp order list work?", answer: "Add items, set quantities, then choose Continue on WhatsApp. Your message includes product names and links." },
+      { question: "Can I change quantities before sending?", answer: "Yes. Use the quantity controls in your order list." },
     ],
   },
 ];
@@ -39,7 +39,7 @@ export default function FAQSection() {
   const selectGroup = (index) => { setGroupIndex(index); setOpenIndex(0); };
 
   return <section className="faq-section section-wrap" id="faq" aria-labelledby="faq-title">
-    <div className="faq-heading"><div><span className="eyebrow">GOOD TO KNOW</span><h2 id="faq-title">Frequently Asked Questions</h2><p>Find the details you need before sending your enquiry.</p></div><span className="faq-mark" aria-hidden="true">?</span></div>
+    <div className="faq-heading"><div><span className="eyebrow">GOOD TO KNOW</span><h2 id="faq-title">Frequently Asked Questions</h2></div></div>
     <div className="faq-layout">
       <div className="faq-tabs" role="group" aria-label="FAQ topics">{groups.map((group, index) => <button key={group.name} type="button" aria-pressed={groupIndex === index} className={groupIndex === index ? "is-active" : ""} onClick={() => selectGroup(index)}>{group.name}<span aria-hidden="true">↗</span></button>)}</div>
       <div className="faq-questions" key={groupIndex}>

@@ -21,7 +21,7 @@ function FeatureCard({ product, add, outgoing = false, direction, onExit }) {
   const copy = <>
     <FeatureVisual product={product} />
     <span className="featured-card-category">{catalogueCategory(product)}</span>
-    <span className="featured-card-copy"><strong>{product.name}</strong><span>Price on enquiry</span><small>{product.image ? "View product details ↗" : "Illustrative material image · View details ↗"}</small></span>
+    <span className="featured-card-copy"><strong>{product.name}</strong><span>Price on enquiry</span>{!product.image && <small>Illustrative image</small>}</span>
   </>;
 
   return <article
@@ -55,7 +55,7 @@ export default function FeaturedProducts() {
   const next = selections[(active + 1) % selections.length];
 
   return <section className="featured-products" aria-labelledby="featured-products-title">
-    <div className="featured-products-heading"><span className="eyebrow">FROM THE CATALOGUE</span><h2 id="featured-products-title">Featured products</h2><p>Considered materials and finishing details for your next project.</p></div>
+    <div className="featured-products-heading"><span className="eyebrow">FROM THE CATALOGUE</span><h2 id="featured-products-title">Featured products</h2></div>
     <div className="featured-stage">
       <button className="featured-side featured-side-left" type="button" onClick={() => select(-1)} aria-label={`View ${previous.name}`}><FeatureVisual key={previous.slug} product={previous} /></button>
       <div className="featured-center">
