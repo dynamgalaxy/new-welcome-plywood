@@ -13,7 +13,7 @@ const groups = [
   {
     name: "Products",
     questions: [
-      { question: "Where can I see product details?", answer: "Open a product page. Ask us on WhatsApp if a detail is missing." },
+      { question: "How do I find a design or product code?", answer: "Search the catalogue by name or code, then open the product page." },
       { question: "Can I enquire about more than one product?", answer: "Yes. Add items, set quantities, and send one WhatsApp enquiry." },
     ],
   },
@@ -21,7 +21,7 @@ const groups = [
     name: "Pricing",
     questions: [
       { question: "Why do some products show ‘Price on enquiry’?", answer: "A price is not listed. Ask us for current pricing." },
-      { question: "How do I confirm availability?", answer: "Send your list. Our team will confirm availability." },
+      { question: "How do I check sizes, finishes or availability?", answer: "Open the product page for listed details. Enquire about anything not shown." },
     ],
   },
   {

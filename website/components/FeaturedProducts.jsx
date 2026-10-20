@@ -6,9 +6,9 @@ import { catalogueCategory } from "../lib/catalog";
 import { useOrder } from "./OrderContext";
 
 const selections = [
-  { slug: "fuse-acoustic-wooden-wall-panel", visual: "panels" },
   { slug: "alnoor-tactile-1050", visual: "plywood" },
   { slug: "drawer-handle-030", visual: "hardware" },
+  { slug: "fruit-basket-cwj240a", visual: "hardware" },
 ].map(({ slug, visual }) => ({ ...products.find((product) => product.slug === slug), visual }));
 
 function FeatureVisual({ product }) {
@@ -55,7 +55,7 @@ export default function FeaturedProducts() {
   const next = selections[(active + 1) % selections.length];
 
   return <section className="featured-products" aria-labelledby="featured-products-title">
-    <div className="featured-products-heading"><span className="eyebrow">FROM THE CATALOGUE</span><h2 id="featured-products-title">Featured products</h2></div>
+    <div className="featured-products-heading"><span className="eyebrow">SURFACES & FINISHING DETAILS</span><h2 id="featured-products-title">Selected materials</h2></div>
     <div className="featured-stage">
       <button className="featured-side featured-side-left" type="button" onClick={() => select(-1)} aria-label={`View ${previous.name}`}><FeatureVisual key={previous.slug} product={previous} /></button>
       <div className="featured-center">

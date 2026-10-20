@@ -1,7 +1,7 @@
 "use client";
 import { useMemo, useState } from "react";
 import products from "../public/data/products.json";
-import { catalogueCategories, catalogueCategory, productHasBrand } from "../lib/catalog";
+import { catalogueCategories, matchesCatalogueCategory, productHasBrand } from "../lib/catalog";
 import ProductCard from "./ProductCard";
 
 export default function ProductsCatalogue({ initialFilters = {} }) {
@@ -10,7 +10,7 @@ export default function ProductsCatalogue({ initialFilters = {} }) {
   const [brand, setBrand] = useState(initialFilters.brand || "");
   const [query, setQuery] = useState(initialFilters.search || "");
   const filtered = useMemo(() => products.filter((product) =>
-    (category === "All" || catalogueCategory(product) === category) &&
+    matchesCatalogueCategory(product, category) &&
     (!source || (product.category || "").toLowerCase() === source.toLowerCase()) &&
     (!brand || productHasBrand(product, brand)) &&
     `${product.name} ${product.category || ""}`.toLowerCase().includes(query.trim().toLowerCase())

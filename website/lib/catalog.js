@@ -8,11 +8,15 @@ export function productHasBrand(product, brand) {
   return brand === "J & I" ? /\bJ\s*&\s*I\b/i.test(name) : name.toLowerCase().includes(brand.toLowerCase());
 }
 export function catalogueCategory(product) {
-  if (brandNames.some((brand) => productHasBrand(product, brand))) return "Brand";
   const source = (product.category || "").toLowerCase().replace(/[ _-]/g, "");
-  if (["plywood", "wallpanel", "doorskin", "edgebandingtape"].includes(source)) return "Plywood";
+  if (["plywood", "wallpanel", "doorskin", "edgebandingtape", "lcb"].includes(source)) return "Plywood";
   if (["kitchenitems", "wardrobe"].includes(source)) return "Kitchen Items";
   return "Hardware";
+}
+export function matchesCatalogueCategory(product, category) {
+  if (category === "All") return true;
+  if (category === "Brand") return brandNames.some((brand) => productHasBrand(product, brand));
+  return catalogueCategory(product) === category;
 }
 export { catalogueCategories };
 export function whatsappMessageUrl(message) {

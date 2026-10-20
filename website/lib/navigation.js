@@ -12,7 +12,7 @@ export const megaMenus = [
   {
     id: "shop", label: "Shop", href: "/products", action: "View all products",
     sections: [
-      section("Collections", [{ label: "Best selling", href: "/#catalogue" }, ...catalogueCategories.map(categoryLink)]),
+      section("Collections", [{ label: "Explore products", href: "/#catalogue" }, ...catalogueCategories.map(categoryLink)]),
       section("Surfaces", [sourceLink("WALL PANEL", "Wall Panels"), sourceLink("Door Skin", "Door Skin"), sourceLink("EDGE BANDING TAPE", "Edge Banding Tape"), sourceLink("LCB", "LCB")]),
       section("More materials", [sourceLink("CHEMICALS", "Chemicals"), sourceLink("WARDROBE", "Wardrobe"), sourceLink("GOLA-BEEDING", "Gola-Beeding")]),
     ],
